@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "bigint", "bigint\bigint.vcx
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "segtree", "segtree\segtree.vcxproj", "{077AC1C5-15EA-4DA7-ADDD-41A092EB1D6F}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTest1", "UnitTest1\UnitTest1.vcxproj", "{7B96BF15-2ABD-4471-A1A9-0D72EC241AC5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{077AC1C5-15EA-4DA7-ADDD-41A092EB1D6F}.Release|x64.Build.0 = Release|x64
 		{077AC1C5-15EA-4DA7-ADDD-41A092EB1D6F}.Release|x86.ActiveCfg = Release|Win32
 		{077AC1C5-15EA-4DA7-ADDD-41A092EB1D6F}.Release|x86.Build.0 = Release|Win32
+		{7B96BF15-2ABD-4471-A1A9-0D72EC241AC5}.Debug|x64.ActiveCfg = Debug|x64
+		{7B96BF15-2ABD-4471-A1A9-0D72EC241AC5}.Debug|x64.Build.0 = Debug|x64
+		{7B96BF15-2ABD-4471-A1A9-0D72EC241AC5}.Debug|x86.ActiveCfg = Debug|Win32
+		{7B96BF15-2ABD-4471-A1A9-0D72EC241AC5}.Debug|x86.Build.0 = Debug|Win32
+		{7B96BF15-2ABD-4471-A1A9-0D72EC241AC5}.Release|x64.ActiveCfg = Release|x64
+		{7B96BF15-2ABD-4471-A1A9-0D72EC241AC5}.Release|x64.Build.0 = Release|x64
+		{7B96BF15-2ABD-4471-A1A9-0D72EC241AC5}.Release|x86.ActiveCfg = Release|Win32
+		{7B96BF15-2ABD-4471-A1A9-0D72EC241AC5}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
