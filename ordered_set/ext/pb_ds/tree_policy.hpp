@@ -13,6 +13,7 @@ namespace std
 		{
 			using tree_type = rb_tree_tag;
 		};
+		mt19937 rnd_device{ random_device{}() };
 		template <typename T>
 		struct tree_order_statistics_node_update
 		{
@@ -25,6 +26,8 @@ namespace std
 			{
 				return x;
 			}
+
+			tree_order_statistics_node_update(const T& init) : x(init), y(rnd_device()), c(1), l(nullptr), r(nullptr) {}
 		};
 
 		template <typename T, typename Key, typename Compare, typename TreeTag, template<typename T2> typename Node>
@@ -55,12 +58,12 @@ namespace std
 		protected:
 			iterator create(const T& x)
 			{
-				iterator n = new Node;
-				n->c = 1;
+				iterator n = new Node(x);
+				/*n->c = 1;
 				n->x = x;
 				n->y = rand();
 				n->l = nullptr;
-				n->r = nullptr;
+				n->r = nullptr;*/
 				return n;
 			}
 
@@ -78,7 +81,7 @@ namespace std
 				r->c = size(r->l) + size(r->r) + 1;
 			}
 
-			iterator find(iterator root, T x) const
+			iterator find(iterator root, const T& x) const
 			{
 				if (root == nullptr)
 					return nullptr;
@@ -524,6 +527,21 @@ namespace std
 					insert(i);
 				}
 			}
+
+			tree(tree<T, null_type, Compare, rb_tree_tag, tree_order_statistics_node_update>&& oth) : func(move(oth.func))
+			{
+				root = oth.root;
+				oth.root = nullptr;
+			}
+
+			tree<T, null_type, Compare, rb_tree_tag, tree_order_statistics_node_update>& operator=(tree<T, null_type, Compare, rb_tree_tag, tree_order_statistics_node_update>&& oth)
+			{
+				clear();
+				root = oth.root;
+				oth.root = nullptr;
+				return *this;
+			}
+
 
 			inline bool erase(tree_iterator it)
 			{
