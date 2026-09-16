@@ -327,17 +327,17 @@ namespace std
 
 			//using tree_iterator = tree_iterator_t<T, Compare>;
 
-			tree()
+			tree() noexcept
 			{
 				root = nullptr;
 			}
 
-			tree(const Compare& cmp) : func(cmp)
+			tree(const Compare& cmp) : func(cmp) noexcept
 			{
 				root = nullptr;
 			}
 
-			~tree()
+			~tree() noexcept
 			{
 				clear(root);
 			}
@@ -503,7 +503,7 @@ namespace std
 				return res;
 			}
 
-			inline void clear()
+			inline void clear() noexcept
 			{
 				clear(root);
 				root = nullptr;
@@ -528,13 +528,13 @@ namespace std
 				}
 			}
 
-			tree(tree<T, null_type, Compare, rb_tree_tag, tree_order_statistics_node_update>&& oth) : func(move(oth.func))
+			tree(tree<T, null_type, Compare, rb_tree_tag, tree_order_statistics_node_update>&& oth) : func(move(oth.func)) noexcept
 			{
 				root = oth.root;
 				oth.root = nullptr;
 			}
 
-			tree<T, null_type, Compare, rb_tree_tag, tree_order_statistics_node_update>& operator=(tree<T, null_type, Compare, rb_tree_tag, tree_order_statistics_node_update>&& oth)
+			tree<T, null_type, Compare, rb_tree_tag, tree_order_statistics_node_update>& operator=(tree<T, null_type, Compare, rb_tree_tag, tree_order_statistics_node_update>&& oth) noexcept
 			{
 				clear();
 				root = oth.root;
