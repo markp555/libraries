@@ -332,7 +332,7 @@ namespace std
 				root = nullptr;
 			}
 
-			tree(const Compare& cmp) : func(cmp) noexcept
+			tree(const Compare& cmp) noexcept : func(cmp)
 			{
 				root = nullptr;
 			}
@@ -528,7 +528,7 @@ namespace std
 				}
 			}
 
-			tree(tree<T, null_type, Compare, rb_tree_tag, tree_order_statistics_node_update>&& oth) : func(move(oth.func)) noexcept
+			tree(tree<T, null_type, Compare, rb_tree_tag, tree_order_statistics_node_update>&& oth) noexcept : func(move(oth.func))
 			{
 				root = oth.root;
 				oth.root = nullptr;
