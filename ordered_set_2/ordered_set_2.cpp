@@ -71,6 +71,7 @@ int main()
 		cout << i << ' ';
 		ss.insert(i);
 	}
+	std::prev(a.end());
 	cout << '\n';
 	for (auto& i : ss)
 	{

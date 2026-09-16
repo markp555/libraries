@@ -78,7 +78,7 @@ namespace std
 			{
 				if (r == nullptr)
 					return;
-				r->c = size(r->l) + size(r->r) + 1;
+				r->c = (unsigned)(size(r->l) + size(r->r) + 1);
 			}
 
 			iterator find(iterator root, const T& x) const
@@ -256,7 +256,7 @@ namespace std
 				//using tree_iterator = tree_iterator_t<_T, _C>;
 				using iterator_category = bidirectional_iterator_tag;
 				using value_type = const T;
-				using difference_type = size_t;
+				using difference_type = ptrdiff_t;
 				using pointer = const T*;
 				using reference = const T&;
 			private:
